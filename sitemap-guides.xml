@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://hexsorcerer.github.io/guides/0.1.0/app.html</loc>
-<lastmod>2023-03-11T19:43:38.091Z</lastmod>
+<loc>https://hexsorcerer.github.io/guides/0.2.0/index.html</loc>
+<lastmod>2023-03-11T19:57:47.345Z</lastmod>
 </url>
 <url>
-<loc>https://hexsorcerer.github.io/guides/0.1.0/index.html</loc>
-<lastmod>2023-03-11T19:43:38.091Z</lastmod>
+<loc>https://hexsorcerer.github.io/guides/0.2.0/software/app.html</loc>
+<lastmod>2023-03-11T19:57:47.345Z</lastmod>
 </url>
 <url>
-<loc>https://hexsorcerer.github.io/guides/0.1.0/software/index.html</loc>
-<lastmod>2023-03-11T19:43:38.091Z</lastmod>
+<loc>https://hexsorcerer.github.io/guides/0.2.0/software/index.html</loc>
+<lastmod>2023-03-11T19:57:47.345Z</lastmod>
+</url>
+<url>
+<loc>https://hexsorcerer.github.io/guides/0.2.0/software/javascript/nvm.html</loc>
+<lastmod>2023-03-11T19:57:47.345Z</lastmod>
 </url>
 </urlset>
