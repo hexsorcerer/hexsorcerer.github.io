@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>SSH :: hexsorcerer</title>
-    <link rel="canonical" href="https://hexsorcerer.github.io/guides/0.7.0/software/ssh/index.html">
-    <link rel="prev" href="../javascript/nvm.html">
+    <title>Docker :: hexsorcerer</title>
+    <link rel="canonical" href="https://hexsorcerer.github.io/guides/0.7.1/software/docker/index.html">
+    <link rel="prev" href="../github/index.html">
+    <link rel="next" href="../elasticstack/index.html">
     <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <script>var uiRootPath = '../../../../_'</script>
@@ -50,7 +51,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="guides" data-version="0.7.0">
+<div class="nav-container" data-component="guides" data-version="0.7.1">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -72,8 +73,8 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../github/index.html">GitHub</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../docker/index.html">Docker</a>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="index.html">Docker</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../elasticstack/index.html">Elastic Stack</a>
@@ -87,8 +88,8 @@
   </li>
 </ul>
   </li>
-  <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="index.html">SSH</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ssh/index.html">SSH</a>
   </li>
 </ul>
   </li>
@@ -100,14 +101,14 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">Guides</span>
-    <span class="version">0.7.0</span>
+    <span class="version">0.7.1</span>
   </div>
   <ul class="components">
     <li class="component is-current">
       <a class="title" href="../../index.html">Guides</a>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="../../index.html">0.7.0</a>
+          <a href="../../index.html">0.7.1</a>
         </li>
       </ul>
     </li>
@@ -132,7 +133,7 @@
   <ul>
     <li><a href="../../index.html">Guides</a></li>
     <li><a href="../index.html">Software</a></li>
-    <li><a href="index.html">SSH</a></li>
+    <li><a href="index.html">Docker</a></li>
   </ul>
 </nav>
 </div>
@@ -141,43 +142,42 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">SSH</h1>
+<h1 class="page">Docker</h1>
 <div class="sect1">
-<h2 id="use-your-existing-ssh-keys-in-wsl2"><a class="anchor" href="#use-your-existing-ssh-keys-in-wsl2"></a>Use your existing SSH keys in WSL2</h2>
+<h2 id="wsl2-backend-on-windows"><a class="anchor" href="#wsl2-backend-on-windows"></a>WSL2 backend on Windows</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Run these commands:</p>
+<p><a href="https://docs.docker.com/desktop/windows/wsl/">Docker Desktop WSL 2 backend on Windows</a></p>
+</div>
+<div class="paragraph">
+<p>Shows how to configure Docker Desktop for Windows with WSL2.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configure-permissions"><a class="anchor" href="#configure-permissions"></a>Configure permissions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You&#8217;ll need to do this post-install, even on WSL2.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">cp -r /mnt/c/Users/&lt;username&gt;/.ssh ~/.ssh</code></pre>
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">sudo groupadd docker</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">chmod 600 ~/.ssh/id_rsa</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">sudo apt install keychain</code></pre>
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">sudo usermod -aG docker $USER</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Add this line to your .bashrc:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">eval ``keychain --eval --agents ssh id_rsa</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>From <a href="https://devblogs.microsoft.com/commandline/sharing-ssh-keys-between-windows-and-wsl-2/">Sharing SSH keys between Windows and WSL 2</a></p>
+<p>From <a href="https://docs.docker.com/engine/install/linux-postinstall/">Linux post-installation steps for Docker Engine</a></p>
 </div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../javascript/nvm.html">nvm</a></span>
+  <span class="prev"><a href="../github/index.html">GitHub</a></span>
+  <span class="next"><a href="../elasticstack/index.html">Elastic Stack</a></span>
 </nav>
 </article>
   </div>
