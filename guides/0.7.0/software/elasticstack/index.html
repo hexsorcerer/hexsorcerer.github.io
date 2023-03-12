@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Asciidoc :: hexsorcerer</title>
-    <link rel="canonical" href="https://hexsorcerer.github.io/guides/0.6.0/software/asciidoc/index.html">
-    <link rel="prev" href="../index.html">
+    <title>Elastic Stack :: hexsorcerer</title>
+    <link rel="canonical" href="https://hexsorcerer.github.io/guides/0.7.0/software/elasticstack/index.html">
+    <link rel="prev" href="../docker/index.html">
     <link rel="next" href="../javascript/index.html">
     <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../../_/css/site.css">
@@ -51,7 +51,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="guides" data-version="0.6.0">
+<div class="nav-container" data-component="guides" data-version="0.7.0">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -64,8 +64,20 @@
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../index.html">Software</a>
 <ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../asciidoc/index.html">Asciidoc</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../antora/index.html">Antora</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../github/index.html">GitHub</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../docker/index.html">Docker</a>
+  </li>
   <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="index.html">Asciidoc</a>
+    <a class="nav-link" href="index.html">Elastic Stack</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -75,6 +87,9 @@
     <a class="nav-link" href="../javascript/nvm.html">nvm</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ssh/index.html">SSH</a>
   </li>
 </ul>
   </li>
@@ -86,14 +101,14 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">Guides</span>
-    <span class="version">0.6.0</span>
+    <span class="version">0.7.0</span>
   </div>
   <ul class="components">
     <li class="component is-current">
       <a class="title" href="../../index.html">Guides</a>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="../../index.html">0.6.0</a>
+          <a href="../../index.html">0.7.0</a>
         </li>
       </ul>
     </li>
@@ -118,7 +133,7 @@
   <ul>
     <li><a href="../../index.html">Guides</a></li>
     <li><a href="../index.html">Software</a></li>
-    <li><a href="index.html">Asciidoc</a></li>
+    <li><a href="index.html">Elastic Stack</a></li>
   </ul>
 </nav>
 </div>
@@ -127,71 +142,55 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Asciidoc</h1>
+<h1 class="page">Elastic Stack</h1>
 <div class="sect1">
-<h2 id="asciidoc-writers-guide"><a class="anchor" href="#asciidoc-writers-guide"></a>Asciidoc Writers Guide</h2>
+<h2 id="elastic-agent"><a class="anchor" href="#elastic-agent"></a>Elastic Agent</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="https://asciidoctor.org/docs/asciidoc-writers-guide/">AsciiDoc Writer’s Guide</a> is the go-to for all your Asciidoc syntax needs.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="using-text-formatting-in-code-blocks"><a class="anchor" href="#using-text-formatting-in-code-blocks"></a>Using text formatting in code blocks</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Sometimes I want to use bold or italics inside of a code block to represent
-something that you can&#8217;t copy/paste. For example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">nvm use <strong><em>&lt;major_version&gt;</em></strong></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Since the user has to say which major version they want, I&#8217;d like to draw
-attention to that using an approach similar to what I see in many books.</p>
-</div>
-<div class="paragraph">
-<p>To accomplish this, Asciidoc provides the ability to customize the substitutions
-applied in a block.</p>
-</div>
-<div class="paragraph">
-<p>We use a listing block for source code, so add this just above the block:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">[subs="+quotes"]</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>This will allow you to use the standard text formatting in the block:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">nvm use *_&lt;major_version&gt;_*</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>which will render as:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">nvm use <strong><em>&lt;major_version&gt;</em></strong></code></pre>
-</div>
+<p><a href="https://www.elastic.co/guide/en/apm/guide/current/upgrade-to-apm-integration.html">Switch to the Elastic APM integration</a>
+<a href="https://www.elastic.co/guide/en/fleet/current/elastic-agent-container.html">Run Elastic Agent in a container</a>
+<a href="https://www.elastic.co/guide/en/fleet/current/agent-environment-variables.html">Elastic Agent environment variables</a></p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="references"><a class="anchor" href="#references"></a>References</h2>
+<h2 id="fleet-examples"><a class="anchor" href="#fleet-examples"></a>Fleet examples</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="https://docs.asciidoctor.org/asciidoc/latest/subs/apply-subs-to-blocks/">Customize the Substitutions Applied to Blocks</a></p>
+<p><a href="https://github.com/peasead/elastic-container">peasead/elastic-container</a>
+<a href="https://github.com/michaelhyatt/elastic-stack-fleet-docker-compose">Running ES, Kibana and Fleet server in docker-compose</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="opentelemtry"><a class="anchor" href="#opentelemtry"></a>OpenTelemtry</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://www.elastic.co/guide/en/apm/guide/current/open-telemetry.html">OpenTelemetry integration</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="performance"><a class="anchor" href="#performance"></a>Performance</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-configuration-memory.html">Disable swapping</a>
+<a href="https://unix.stackexchange.com/a/456998">Meaning of the values for ulimit memlock flag</a>
+<a href="https://docs.docker.com/compose/compose-file/compose-file-v3/#ulimits">ulimits</a>
+<a href="https://stackoverflow.com/a/29422753">Can I use mem_limit in docker-compose? and How?</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="security"><a class="anchor" href="#security"></a>Security</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/security-settings.html">Security settings in Elasticsearch</a></p>
 </div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../index.html">Software</a></span>
+  <span class="prev"><a href="../docker/index.html">Docker</a></span>
   <span class="next"><a href="../javascript/index.html">Javascript</a></span>
 </nav>
 </article>

@@ -3,10 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Javascript :: hexsorcerer</title>
-    <link rel="canonical" href="https://hexsorcerer.github.io/guides/0.6.0/software/javascript/index.html">
-    <link rel="prev" href="../asciidoc/index.html">
-    <link rel="next" href="nvm.html">
+    <title>SSH :: hexsorcerer</title>
+    <link rel="canonical" href="https://hexsorcerer.github.io/guides/0.7.0/software/ssh/index.html">
+    <link rel="prev" href="../javascript/nvm.html">
     <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <script>var uiRootPath = '../../../../_'</script>
@@ -51,7 +50,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="guides" data-version="0.6.0">
+<div class="nav-container" data-component="guides" data-version="0.7.0">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -67,14 +66,29 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../asciidoc/index.html">Asciidoc</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../antora/index.html">Antora</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../github/index.html">GitHub</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../docker/index.html">Docker</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../elasticstack/index.html">Elastic Stack</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="index.html">Javascript</a>
+    <a class="nav-link" href="../javascript/index.html">Javascript</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="nvm.html">nvm</a>
+    <a class="nav-link" href="../javascript/nvm.html">nvm</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="index.html">SSH</a>
   </li>
 </ul>
   </li>
@@ -86,14 +100,14 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">Guides</span>
-    <span class="version">0.6.0</span>
+    <span class="version">0.7.0</span>
   </div>
   <ul class="components">
     <li class="component is-current">
       <a class="title" href="../../index.html">Guides</a>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="../../index.html">0.6.0</a>
+          <a href="../../index.html">0.7.0</a>
         </li>
       </ul>
     </li>
@@ -118,7 +132,7 @@
   <ul>
     <li><a href="../../index.html">Guides</a></li>
     <li><a href="../index.html">Software</a></li>
-    <li><a href="index.html">Javascript</a></li>
+    <li><a href="index.html">SSH</a></li>
   </ul>
 </nav>
 </div>
@@ -127,13 +141,43 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Javascript</h1>
+<h1 class="page">SSH</h1>
+<div class="sect1">
+<h2 id="use-your-existing-ssh-keys-in-wsl2"><a class="anchor" href="#use-your-existing-ssh-keys-in-wsl2"></a>Use your existing SSH keys in WSL2</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Under construction</p>
+<p>Run these commands:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">cp -r /mnt/c/Users/&lt;username&gt;/.ssh ~/.ssh</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">chmod 600 ~/.ssh/id_rsa</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">sudo apt install keychain</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Add this line to your .bashrc:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">eval ``keychain --eval --agents ssh id_rsa</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>From <a href="https://devblogs.microsoft.com/commandline/sharing-ssh-keys-between-windows-and-wsl-2/">Sharing SSH keys between Windows and WSL 2</a></p>
+</div>
+</div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../asciidoc/index.html">Asciidoc</a></span>
-  <span class="next"><a href="nvm.html">nvm</a></span>
+  <span class="prev"><a href="../javascript/nvm.html">nvm</a></span>
 </nav>
 </article>
   </div>
